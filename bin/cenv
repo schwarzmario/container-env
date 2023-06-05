@@ -371,6 +371,10 @@ else
             EXTRA_OPTS="${EXTRA_OPTS} -B $XDG_RUNTIME_DIR"
         fi
 
+        if [ -f "${CENV_DIR}/env.sh" ]; then
+            EXTRA_OPTS="${EXTRA_OPTS} --env-file ${CENV_DIR}/env.sh"
+        fi
+
         # echo "DEBUG: CENV_DIR=\"${CENV_DIR}\"" >&2
         # echo "DEBUG: CENV_USER_DIR=\"${CENV_USER_DIR}\"" >&2
         # echo "DEBUG: CENV_USER_MNT=\"${CENV_USER_MNT}\"" >&2
