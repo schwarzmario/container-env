@@ -7,17 +7,18 @@ if [[ -z ${USER_STORAGE} ]]; then
     echo "!!!"
 else
     # set singularity cache directory (defaults to ~/.singularity, not enough disk quota there)
-    export SINGULARITY_CACHEDIR="${USER_STORAGE}/.singularity"
-    mkdir -p ${SINGULARITY_CACHEDIR}
+    export APPTAINER_CACHEDIR="${USER_STORAGE}/.singularity"
+    mkdir -p ${APPTAINER_CACHEDIR}
 
     # set storage path for singularity-cenv (defaults to ~/.cenv, not enough disk quota there)
     export CENV_BASE_DIR="${USER_STORAGE}/.cenv"
 
     # expose singularity-cenv executable
-    export PATH="${PATH}:/mnt/atlas01/projects/legend/sw/container-env/bin"
+    export PATH="${PATH}:/mnt/atlas01/users/schwarz/software/container-env/bin"
 
     # mount extra filesystems
-    export CENV_SINGULARITY_OPTS="--bind /mnt"
+    # already in my mount point list (?)   
+    # export CENV_APPTAINER_OPTS="$CENV_APPTAINER_OPTS --bind /mnt"
 
     # other LEGEND-relevant variables
     export PRODENV="/data/atlas01/projects/legend/data/prodenv"
