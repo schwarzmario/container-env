@@ -14,12 +14,10 @@ else
     export CENV_BASE_DIR="${USER_STORAGE}/.cenv"
 
     # expose singularity-cenv executable
-    export PATH="${PATH}:/mnt/atlas01/users/schwarz/software/container-env/bin"
+    export PATH="${PATH}:$USER_STORAGE/software/container-env/bin"
 
     # mount extra filesystems
     # already in my mount point list (?)   
     # export CENV_APPTAINER_OPTS="$CENV_APPTAINER_OPTS --bind /mnt"
 
-    # other LEGEND-relevant variables
-    export PRODENV="/data/atlas01/projects/legend/data/prodenv"
 fi
