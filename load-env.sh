@@ -17,7 +17,6 @@ else
     export PATH="${PATH}:$USER_STORAGE/software/container-env/bin"
 
     # mount extra filesystems
-    # already in my mount point list (?)   
-    # export CENV_APPTAINER_OPTS="$CENV_APPTAINER_OPTS --bind /mnt"
+    export CENV_APPTAINER_OPTS="$CENV_APPTAINER_OPTS --bind /scratch6"
 
 fi
